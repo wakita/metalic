@@ -15,19 +15,20 @@ typedef struct Vertex {
 
 typedef struct VS_Out {
     float4 position [[ position ]];
+    uint id [[ flat ]];
 } FS_In;
-
-typedef float4 FS_Out;
 
 vertex VS_Out vs(const device VS_In *vertices [[ buffer(0) ]],
                  uint vertexID [[ vertex_id ]]) {
     VS_Out out;
     out.position = float4(vertices[vertexID].position, 0, 1);
+    out.id = vertexID / 3;
     return out;
 }
 
+typedef float4 FS_Out;
+
 fragment FS_Out fs(FS_In pixel [[ stage_in ]], float2 uv [[ point_coord ]]) {
-    const int S = 5;
-    float x = uv.x * S, y = uv.y * S;
-    return float4(x - (int)x, y - (int)y, 0, 1);
+    if (pixel.id % 2 == 1) uv = 1 - uv;
+    return float4(uv, 0, 1);
 }

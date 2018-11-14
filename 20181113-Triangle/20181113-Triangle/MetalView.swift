@@ -6,13 +6,17 @@
 
 import MetalKit
 
+/**
+ - Note: もともとは Cocoa 向けのビューのクラスが用意されていた。それを削除して、そのかわりに `MTKView` のサブクラスを用意した。storyboard のビューのクラスをここで定義した `MetalView` に変更することを忘れないように。
+ */
 class MetalView: MTKView {
     var renderer: Renderer!
     
+    /**
+     - Note: `device = MTLCreateSystemDefaultDevice()` とでもやりたいところだけれど、これだとデバイスオブジェクトが瞬間的にゴミになるらしい。このため、（無駄に思えるけれど）変数を用意して一旦、そこに代入している。
+     */
     required init(coder: NSCoder) {
         super.init(coder: coder)
-        
-        print("Application started")
         
         guard let defaultDevice = MTLCreateSystemDefaultDevice() else {
             fatalError("Device loading error")

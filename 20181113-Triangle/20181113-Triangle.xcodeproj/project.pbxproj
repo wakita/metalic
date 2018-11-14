@@ -440,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.smartnova.-0181113-Triangle";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.smartnova.0181113-Triangle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -459,7 +459,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.smartnova.-0181113-Triangle";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.smartnova.0181113-Triangle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
