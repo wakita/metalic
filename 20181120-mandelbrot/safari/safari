@@ -1,0 +1,3 @@
+#!/bin/sh
+
+open -a "Safari Technology Preview" mandelbrot.html

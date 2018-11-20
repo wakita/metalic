@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=600">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>WebMetal Mandelbrot demo</title>
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="style.css">
+<!-- link rel="stylesheet" href="https://www.apple.com/wss/fonts?family=Myriad+Set+Pro&amp;v=1" -->
+<script src="shared.js"></script>
+<script src="mandelbrot.js"></script>
+<script id="library" type="x-shader/x-metal" src="mandelbrot.metal></script>
+
+<script id="library" type="x-shader/x-metal">
+#include <metal_stdlib>
+using namespace metal;
+
+typedef struct VS_In {
+    float2 position;
+};
+
+struct VS_Out {
+    float4 position [[ position ]];
+    float2 complex;
+};
+
+vertex VS_Out vs(const device VS_In *vertices [[ buffer(0) ]],
+                 constant float2x2 &C [[ buffer(1) ]],
+                 uint id [[ vertex_id ]]) {
+    VS_Out out;
+    out.position = float4(vertices[id].position, 0, 1);
+    switch (id) {
+        case 0: out.complex.xy = C[0].xy; break;
+        case 1: out.complex.xy = float2(C[1].x, C[0].y); break;
+        case 2: out.complex.xy = float2(C[0].x, C[1].y); break;
+        case 3: out.complex.xy = C[1].xy; break;
+    }
+    return out;
+}
+
+typedef VS_Out FS_In;
+typedef float4 FS_Out;
+
+fragment FS_Out fs(FS_In in [[ stage_in ]]) {
+    const int NCOLOR = 256;
+
+    float2 c = in.complex, z = float2(0, 0);
+    int n = 0;
+    while (n < (NCOLOR - 1) && length(z) <= 2) {
+        float2 z1 = float2(z.x * z.x - z.y * z.y + c.x, 2 * z.x * z.y + c.y);
+        z = z1;
+        n++;
+    }
+    float level = 1 - (float)n / NCOLOR;
+    return float4(level, level, 0, 1);
+}
+</script>
+
+</head>
+<body>
+<canvas></canvas>
+<div id="error">
+    <h2>WebMetal not available</h2>
+    <p>
+    このページを眺めるには、Apple が開発者向けに提供している <a href="https://developer.apple.com/safari/download/">Safari の Technology Preview</a> が必要です。さらに、Safari Technology Preview の環境設定で開発者メニューを有効化したのちに、開発者メニューの <b>Experimental Features</b> → <b>WebMetal</b> を有効化して下さい。</p>
+
+    <p> Make sure you are on a system with WebMetal enabled. In
+        Safari, first make sure the Developer Menu is visible (Preferences →
+        Advanced), then Develop → Experimental Features → Enable WebMetal.
+    </p>
+</div>
+</body>
+</html>
