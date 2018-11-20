@@ -18,7 +18,8 @@ typedef struct VS_Out {
     uint id [[ flat ]];
 } FS_In;
 
-vertex VS_Out vs(const device VS_In *vertices [[ buffer(0) ]],
+vertex VS_Out
+vs(const device VS_In *vertices [[ buffer(0) ]],
                  uint vertexID [[ vertex_id ]]) {
     VS_Out out;
     out.position = float4(vertices[vertexID].position, 0, 1);
@@ -28,7 +29,8 @@ vertex VS_Out vs(const device VS_In *vertices [[ buffer(0) ]],
 
 typedef float4 FS_Out;
 
-fragment FS_Out fs(FS_In pixel [[ stage_in ]], float2 uv [[ point_coord ]]) {
+fragment FS_Out
+fs(FS_In pixel [[ stage_in ]], float2 uv [[ point_coord ]]) {
     if (pixel.id % 2 == 1) uv = 1 - uv;
     return float4(uv, 0, 1);
 }
