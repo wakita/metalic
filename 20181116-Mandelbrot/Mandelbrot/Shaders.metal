@@ -9,9 +9,9 @@
 #include <metal_stdlib>
 using namespace metal;
 
-typedef struct Vertex {
+struct VS_In {
     float2 position;
-} VS_In;
+};
 
 struct VS_Out {
     float4 position [[ position ]];

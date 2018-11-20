@@ -31,26 +31,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let device = MTLCreateSystemDefaultDevice() else { // Fallback to a blank UIView, an application could also fallback to OpenGL ES here.
-            print("Metal is not supported on this device")
-            self.view = UIView(frame: self.view.frame)
-            return
-        }
-        self.device = device
-
-        loadAssets()
         mtkView(view as! MTKView, drawableSizeWillChange: view.frame.size)
+        loadAssets()
     }
     
     func loadAssets() {
         let view = self.view as! MTKView
         commandQueue = device.makeCommandQueue()
-        commandQueue.label = "main command queue"
+        commandQueue.label = "Main command queue"
         
         let defaultLibrary = device.makeDefaultLibrary()!
         
         let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
-        pipelineStateDescriptor.vertexFunction = defaultLibrary.makeFunction(name: "vs")!
+        pipelineStateDescriptor.vertexFunction   = defaultLibrary.makeFunction(name: "vs")!
         pipelineStateDescriptor.fragmentFunction = defaultLibrary.makeFunction(name: "fs")!
         pipelineStateDescriptor.colorAttachments[0].pixelFormat = view.colorPixelFormat
         pipelineStateDescriptor.sampleCount = view.sampleCount
@@ -133,8 +126,14 @@ extension ViewController: MTKViewDelegate {
     
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+        guard let device = MTLCreateSystemDefaultDevice() else { // Fallback to a blank UIView
+            print("Metal is not supported on this device")
+            self.view = UIView(frame: self.view.frame)
+            return
+        }
         view.device = device
-        view.delegate = self
+        self.device = device
         setFrameSize(size: view.frame.size)
+        view.delegate = self
     }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		7989D7101DC52453003AEA03 /* ModelIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7989D70F1DC52453003AEA03 /* ModelIO.framework */; };
 		7989D7131DC52453003AEA03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7989D7121DC52453003AEA03 /* AppDelegate.swift */; };
 		7989D7151DC52453003AEA03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7989D7141DC52453003AEA03 /* ViewController.swift */; };
-		7989D7171DC52453003AEA03 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7989D7161DC52453003AEA03 /* Shaders.metal */; };
 		7989D71A1DC52453003AEA03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7989D7181DC52453003AEA03 /* Main.storyboard */; };
 		7989D71C1DC52453003AEA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7989D71B1DC52453003AEA03 /* Assets.xcassets */; };
 		7989D71F1DC52453003AEA03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7989D71D1DC52453003AEA03 /* LaunchScreen.storyboard */; };
@@ -115,7 +114,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = RedQueenCoder;
+				ORGANIZATIONNAME = "Ken Wakita";
 				TargetAttributes = {
 					7989D7071DC52453003AEA03 = {
 						CreatedOnToolsVersion = 8.0;
@@ -126,7 +125,7 @@
 				};
 			};
 			buildConfigurationList = 7989D7031DC52453003AEA03 /* Build configuration list for PBXProject "Mandelbrot" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -161,7 +160,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7989D7171DC52453003AEA03 /* Shaders.metal in Sources */,
 				7989D7151DC52453003AEA03 /* ViewController.swift in Sources */,
 				7989D7131DC52453003AEA03 /* AppDelegate.swift in Sources */,
 			);
@@ -293,7 +291,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -304,10 +303,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TZ26RM2EZX;
 				INFOPLIST_FILE = Mandelbrot/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ken.kw;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "smartnova.ken.0181116-mandelbrot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -319,10 +321,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TZ26RM2EZX;
 				INFOPLIST_FILE = Mandelbrot/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ken.kw;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "smartnova.ken.0181116-mandelbrot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
