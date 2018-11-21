@@ -32,6 +32,6 @@ class ViewController: NSViewController {
 extension ViewControllerDelegate {
     func mouseDown(with theEvent: NSEvent) {
         let p = view.convert(theEvent.locationInWindow, to: nil)
-        renderer.setTarget(x: Float(p.x), y: Float(p.y))
+        renderer.setTarget(x: f(p.x), y: f(p.y))
     }
 }

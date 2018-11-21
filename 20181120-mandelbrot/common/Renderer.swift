@@ -10,7 +10,6 @@ import MetalKit
 
 struct Vertex {
     var position: float2
-    var complex: float2
 }
 
 class Renderer: NSObject {
@@ -18,10 +17,10 @@ class Renderer: NSObject {
     var renderPipelineState: MTLRenderPipelineState!
     var vertexBuffer: MTLBuffer!
     var vertices: [Vertex] = [
-        Vertex(position: float2(-1, -1), complex: float2(-2, -2)),
-        Vertex(position: float2( 1, -1), complex: float2( 2, -2)),
-        Vertex(position: float2(-1,  1), complex: float2(-2,  2)),
-        Vertex(position: float2( 1,  1), complex: float2( 2,  2))
+        Vertex(position: float2(-1, -1)),
+        Vertex(position: float2( 1, -1)),
+        Vertex(position: float2(-1,  1)),
+        Vertex(position: float2( 1,  1))
     ]
     
     init(device: MTLDevice) {
@@ -53,41 +52,45 @@ class Renderer: NSObject {
         vertexBuffer = device.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count, options: [])
     }
     
-    var frameSize = float2(0, 0)
+    var frameSize: [FLOAT] = [ 0.0, 0.0 ]
     
     /// Point of interest
-    var poi = float2(0, 0)
+    var poi: [FLOAT] = [0.0, 0.0]
     
     /// Complex field
-    var C = float2x2([ float2(-2, -2), float2(2, 2) ])
+    var C: [FLOAT] = [ -2.0, -2.0, 2.0, 2.0 ]
     
     func setFrameSize(size: CGSize) {
-        print(size)
-        frameSize = float2(Float(size.width), Float(size.height))
+        frameSize = [ f(Double(size.width)), f(Double(size.height)) ]
     }
     
-    func setTarget(x: Float, y: Float) {
-        let C0 = C[0], C1 = C[1]
+    func setTarget(x: FLOAT, y: FLOAT) {
         let F = frameSize
-        let pos = float2(x, y)
-        poi.x = ((F.x - pos.x) * C0.x + pos.x * C1.x) / Float(F.x)
-        poi.y = ((F.y - pos.y) * C0.y + pos.y * C1.y) / Float(F.y)
+        let pos = [ x, y ]
+        poi[0] = ((F[0] - pos[0]) * C[0] + pos[0] * C[2]) / F[0]
+        poi[1] = ((F[1] - pos[1]) * C[1] + pos[1] * C[3]) / F[1]
     }
 }
 
-let α = Float(0.998)
-let N = 60
+let α = f(0.998)
+let N = f(60.0)
+let αN = pow(α, N)
 
 extension Renderer: MTKViewDelegate {
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         setFrameSize(size: view.frame.size)
     }
     
-    func setComplexField() {
-        let diag0: float2 = C[1] - C[0]
-        let diag:  float2 = diag0 * pow(α, Float(N))
-        let E = float2x2(poi - diag / 2, poi + diag / 2)
-        C = C * (Float(N - 1) / Float(N)) + E * (Float(1) / Float(N))
+    func setComplexField() -> float2x2 {
+        let diag = [ (C[2] - C[0]) * αN, (C[3] - C[1]) * αN ]
+        let E = [poi[0] - diag[0] / 2, poi[1] - diag[1] / 2,
+                 poi[0] + diag[0] / 2, poi[1] + diag[1] / 2 ]
+        C[0] = C[0] * (N - 1) / N + E[0] / N
+        C[1] = C[1] * (N - 1) / N + E[1] / N
+        C[2] = C[2] * (N - 1) / N + E[2] / N
+        C[3] = C[3] * (N - 1) / N + E[3] / N
+        return float2x2(float2(Float(C[0]), Float(C[1])),
+                        float2(Float(C[2]), Float(C[3])))
     }
     
     func draw(in view: MTKView) {
@@ -97,11 +100,11 @@ extension Renderer: MTKViewDelegate {
             let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptr)
             else { return }
         
-        setComplexField()
+        var fC = setComplexField()
 
         commandEncoder.setRenderPipelineState(renderPipelineState)
         commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        commandEncoder.setVertexBytes(&C, length: MemoryLayout<float2x2>.stride, index: 1)
+        commandEncoder.setVertexBytes(&fC, length: MemoryLayout<float2x2>.stride, index: 1)
         commandEncoder.drawPrimitives(type: .triangleStrip, vertexStart: 0, vertexCount: vertices.count)
         commandEncoder.endEncoding()
         

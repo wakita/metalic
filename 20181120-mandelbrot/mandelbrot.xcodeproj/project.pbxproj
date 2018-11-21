@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B88FB5F21A533AD0058F9E2 /* compat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B88FB5D21A533A70058F9E2 /* compat.swift */; };
+		0B88FB6121A5341F0058F9E2 /* compat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B88FB6021A5341F0058F9E2 /* compat.swift */; };
 		0BE4004921A3AB2E00948399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE4004821A3AB2E00948399 /* AppDelegate.swift */; };
 		0BE4004B21A3AB2E00948399 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE4004A21A3AB2E00948399 /* ViewController.swift */; };
 		0BE4004D21A3AB2F00948399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BE4004C21A3AB2F00948399 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B88FB5D21A533A70058F9E2 /* compat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = compat.swift; path = ios/compat.swift; sourceTree = SOURCE_ROOT; };
+		0B88FB6021A5341F0058F9E2 /* compat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = compat.swift; sourceTree = "<group>"; };
 		0BE4004521A3AB2E00948399 /* mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE4004821A3AB2E00948399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BE4004A21A3AB2E00948399 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		0BE4004721A3AB2E00948399 /* mac */ = {
 			isa = PBXGroup;
 			children = (
+				0B88FB6021A5341F0058F9E2 /* compat.swift */,
 				0BE4004821A3AB2E00948399 /* AppDelegate.swift */,
 				0BE4004A21A3AB2E00948399 /* ViewController.swift */,
 				0BE4004C21A3AB2F00948399 /* Assets.xcassets */,
@@ -167,6 +172,7 @@
 		0BE4007221A3AFDE00948399 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				0B88FB5D21A533A70058F9E2 /* compat.swift */,
 				0BE4007321A3AFDE00948399 /* AppDelegate.swift */,
 				0BE4007521A3AFDE00948399 /* ViewController.swift */,
 				0BE4007721A3AFDE00948399 /* Main.storyboard */,
@@ -349,6 +355,7 @@
 				0BE4006821A3AD2800948399 /* Renderer.swift in Sources */,
 				0BE4006621A3AD1300948399 /* MetalView.swift in Sources */,
 				0BE4004B21A3AB2E00948399 /* ViewController.swift in Sources */,
+				0B88FB6121A5341F0058F9E2 /* compat.swift in Sources */,
 				0BE4004921A3AB2E00948399 /* AppDelegate.swift in Sources */,
 				0BE4009221A3B59900948399 /* ViewControllerDelegate.swift in Sources */,
 				0BE4006C21A3AF8B00948399 /* VectorMath.swift in Sources */,
@@ -371,6 +378,7 @@
 				0BE4009421A3B95300948399 /* MetalView.swift in Sources */,
 				0BE4009721A3BA9600948399 /* Shaders.metal in Sources */,
 				0BE4007621A3AFDE00948399 /* ViewController.swift in Sources */,
+				0B88FB5F21A533AD0058F9E2 /* compat.swift in Sources */,
 				0BE4007421A3AFDE00948399 /* AppDelegate.swift in Sources */,
 				0BE4009521A3B95600948399 /* Renderer.swift in Sources */,
 				0BE4009621A3B95B00948399 /* VectorMath.swift in Sources */,

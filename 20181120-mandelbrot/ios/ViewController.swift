@@ -26,7 +26,6 @@ class ViewController: UIViewController {
 extension ViewControllerDelegate {
     func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let p = view.convert(touches.first!.location(in: view), to: nil)
-        print(p)
-        renderer.setTarget(x: Float(p.x), y: renderer.frameSize.y - Float(p.y))
+        renderer.setTarget(x: f(p.x), y: renderer.frameSize[1] - f(p.y))
     }
 }

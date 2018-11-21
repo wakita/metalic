@@ -11,7 +11,7 @@ using namespace metal;
 
 typedef struct Vertex {
     float2 position;
-    float2 complex;
+    //float2 complex;
 } VS_In;
 
 typedef struct VS_Out {
@@ -35,6 +35,39 @@ vertex VS_Out vs(const device VS_In *vertices [[ buffer(0) ]],
     return out;
 }
 
+float4 hsv2rgb(float h, float s, float v) {
+    float3 rgb = float3(v, v, v);
+    h *= 6;
+    int i = (int)h;
+    float f = h - i;
+    switch (i) {
+        case 0:
+            rgb.g *= 1 - s * (1 - f);
+            rgb.b *= 1 - s;
+            break;
+        case 1:
+            rgb.r *= 1 - s * f;
+            rgb.b *= 1 - s;
+            break;
+        case 2:
+            rgb.r *= 1 - s;
+            rgb.b *= 1 - s * (1 - f);
+            break;
+        case 3:
+            rgb.r *= 1 - s;
+            rgb.g *= 1 - s * f;
+            break;
+        case 4:
+            rgb.r *= 1 - s * (1 - f);
+            rgb.g *= 1 - s;
+            break;
+        case 5:
+            rgb.g *= 1 - s;
+            rgb.b *= 1 - s * f;
+    }
+    return float4(rgb, 1);
+}
+
 fragment FS_Out fs(FS_In pixel [[ stage_in ]]) {
     const int NCOLOR = 256;
 
@@ -45,6 +78,7 @@ fragment FS_Out fs(FS_In pixel [[ stage_in ]]) {
         z = z1;
         n++;
     }
-    float col = 1 - (float)n / NCOLOR;
-    return float4(col, 0, col, 1);
+    float v = 1 - (float)n / NCOLOR;
+    float h = v > 0.4 ? v - 0.4 : v + 0.6;
+    return hsv2rgb(h, 1, v);
 }
