@@ -19,7 +19,7 @@ class MetalView: MTKView {
         }
         device = defaultDevice
         colorPixelFormat = .bgra8Unorm
-        clearColor = MTLClearColor(red: 0.1, green: 0.57, blue: 0.25, alpha: 1)
+        clearColor = MTLClearColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
         
         createRenderer(device: device!)
     }

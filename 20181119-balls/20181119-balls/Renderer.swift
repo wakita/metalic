@@ -28,7 +28,17 @@ class Renderer: NSObject {
     func createPipelineState(device: MTLDevice) {
         guard let library = device.makeDefaultLibrary() else { return }
         let descriptor = MTLRenderPipelineDescriptor()
-        descriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+        let attach = descriptor.colorAttachments[0]
+        attach?.pixelFormat = .bgra8Unorm
+        
+        attach?.isBlendingEnabled = true
+        attach?.rgbBlendOperation = MTLBlendOperation.add
+        attach?.sourceRGBBlendFactor = MTLBlendFactor.sourceAlpha
+        attach?.destinationRGBBlendFactor = MTLBlendFactor.oneMinusSourceAlpha
+        attach?.alphaBlendOperation = MTLBlendOperation.add
+        attach?.sourceRGBBlendFactor = MTLBlendFactor.sourceAlpha
+        attach?.destinationRGBBlendFactor = MTLBlendFactor.oneMinusSourceAlpha
+        
         descriptor.vertexFunction   = library.makeFunction(name: "vs")
         descriptor.fragmentFunction = library.makeFunction(name: "fs")
         do {
