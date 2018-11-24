@@ -73,12 +73,11 @@ fragment FS_Out fs(FS_In pixel [[ stage_in ]]) {
 
     float2 c = pixel.complex, z = float2(0, 0);
     int n = 0;
-    while (n < (NCOLOR - 1) && length(z) <= 2) {
+    while (n < (NCOLOR * 2 - 1) && length(z) <= 2) {
         float2 z1 = float2(z.x * z.x - z.y * z.y + c.x, 2 * z.x * z.y + c.y);
         z = z1;
         n++;
     }
     float v = 1 - (float)n / NCOLOR;
-    float h = v > 0.4 ? v - 0.4 : v + 0.6;
-    return hsv2rgb(h, 1, v);
+    return hsv2rgb(fmod(v + 0.6 + (n % 5 * 0.03), 1.0), 1, v);
 }
