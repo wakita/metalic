@@ -22,6 +22,7 @@ class ViewController: NSViewController {
         }
         metalView.device = defaultDevice
         metalView.colorPixelFormat = .bgra8Unorm
+        metalView.depthStencilPixelFormat = .depth32Float
         metalView.clearColor = MTLClearColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
         
         renderer = Renderer(device: defaultDevice)

@@ -16,6 +16,7 @@ class Renderer: NSObject {
         super.init()
         createCommandQueue(device: device)
         createPipelineState(device: device)
+        buildDepthStencilState(device: device)
         createBuffers(device: device)
         createUniforms()
     }
@@ -42,6 +43,7 @@ class Renderer: NSObject {
         attach?.sourceRGBBlendFactor = MTLBlendFactor.sourceAlpha
         attach?.destinationRGBBlendFactor = MTLBlendFactor.oneMinusSourceAlpha
         
+        descriptor.depthAttachmentPixelFormat = .depth32Float
         descriptor.vertexFunction   = library.makeFunction(name: "vs")
         descriptor.fragmentFunction = library.makeFunction(name: "fs")
         do {
@@ -49,6 +51,14 @@ class Renderer: NSObject {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    var depthStencilState: MTLDepthStencilState!
+    func buildDepthStencilState(device: MTLDevice) {
+        let descriptor = MTLDepthStencilDescriptor()
+        descriptor.depthCompareFunction = .less
+        descriptor.isDepthWriteEnabled = true
+        depthStencilState = device.makeDepthStencilState(descriptor: descriptor)
     }
     
     var vertexBuffer: MTLBuffer!
@@ -85,6 +95,7 @@ extension Renderer: MTKViewDelegate {
             let commandBuffer = commandQueue.makeCommandBuffer(),
             let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptr) else { return }
         commandEncoder.setRenderPipelineState(renderPipelineState)
+        commandEncoder.setDepthStencilState(depthStencilState)
         commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         commandEncoder.setVertexBytes(&U, length: MemoryLayout<Uniforms>.stride, index: 1)
         commandEncoder.drawPrimitives(type: .point, vertexStart: 0, vertexCount: Int(U.N * U.N * U.N))

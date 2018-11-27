@@ -27,7 +27,7 @@ vertex VS_Out vs(uint id [[ vertex_id ]],
     output.color = float3(id / U.N / U.N, id / U.N % U.N, id % U.N) / (U.N - 1);
     float4 p_mv = U.View * U.Model * float4(output.color * 2 - 1, 1);
     output.position = U.Projection * p_mv;
-    output.pointsize = U.FrameSize / U.N / 2 / (p_mv.z);
+    output.pointsize = U.FrameSize / U.N / 2 / p_mv.z;
     output.edgeFraction = (0.5 * (U.N - 1)) / U.N;
     return output;
 }
@@ -41,5 +41,6 @@ fragment FS_Out fs(FS_In  in [[ stage_in ]],
                    float2 xy [[point_coord]]) {
     float  l = length(xy - float2(0.5));
     float3 c = float3((0.5 - l) * 2 * (1 - A) + in.color * A);
+    if (l > 0.5) discard_fragment();
     return float4(c, 1.0 - smoothstep(in.edgeFraction, 0.5, l));
 }
