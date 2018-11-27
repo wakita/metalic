@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MetalView.swift
 //  20181119-balls
 //
 //  Created by Ken Wakita on 2018/11/19.
@@ -8,24 +8,24 @@
 
 import MetalKit
 
-class MetalView: MTKView {
-    var renderer: Renderer!
+class ViewController: NSViewController {
+    var renderer: Renderer?
     
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard let metalView = view as? MTKView else {
+            fatalError("MetalView not setup in storyboard")
+        }
         
         guard let defaultDevice = MTLCreateSystemDefaultDevice() else {
             fatalError("Device loading error")
         }
-        device = defaultDevice
-        colorPixelFormat = .bgra8Unorm
-        clearColor = MTLClearColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+        metalView.device = defaultDevice
+        metalView.colorPixelFormat = .bgra8Unorm
+        metalView.clearColor = MTLClearColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
         
-        createRenderer(device: device!)
-    }
-    
-    func createRenderer(device: MTLDevice) {
-        renderer = Renderer(device: device)
-        delegate = renderer
+        renderer = Renderer(device: defaultDevice)
+        metalView.delegate = renderer
+        renderer?.mtkView(metalView, drawableSizeWillChange: view.frame.size)
     }
 }

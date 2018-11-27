@@ -14,6 +14,7 @@
 		0B1144D721A2E31800190C29 /* _0181119_ballsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144D621A2E31800190C29 /* _0181119_ballsTests.swift */; };
 		0B1144E221A2E3C900190C29 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144E121A2E3C900190C29 /* Renderer.swift */; };
 		0B1144E421A2EC9A00190C29 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144E321A2EC9A00190C29 /* Shaders.metal */; };
+		0B98A31621AA486300042D77 /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B98A31521AA486300042D77 /* MathLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,8 @@
 		0B1144D821A2E31800190C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B1144E121A2E3C900190C29 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		0B1144E321A2EC9A00190C29 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		0B98A31421AA406B00042D77 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		0B98A31521AA486300042D77 /* MathLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				0B1144E121A2E3C900190C29 /* Renderer.swift */,
 				0B1144C321A2E31600190C29 /* AppDelegate.swift */,
 				0B1144E321A2EC9A00190C29 /* Shaders.metal */,
+				0B98A31521AA486300042D77 /* MathLibrary.swift */,
+				0B98A31421AA406B00042D77 /* Bridge.h */,
 				0B1144C721A2E31800190C29 /* Assets.xcassets */,
 				0B1144C921A2E31800190C29 /* Main.storyboard */,
 				0B1144CC21A2E31800190C29 /* Info.plist */,
@@ -205,6 +210,7 @@
 				0B1144C621A2E31600190C29 /* MetalView.swift in Sources */,
 				0B1144E221A2E3C900190C29 /* Renderer.swift in Sources */,
 				0B1144C421A2E31600190C29 /* AppDelegate.swift in Sources */,
+				0B98A31621AA486300042D77 /* MathLibrary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +374,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "smartnova.ken.0181119-balls";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "20181119-balls/Bridge.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -387,6 +394,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "smartnova.ken.0181119-balls";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "20181119-balls/Bridge.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
