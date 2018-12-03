@@ -1,18 +1,18 @@
 import MetalKit
 
-guard let device = MTLCreateSystemDefaultDevice() else { exit(-1) }
+let device = MTLCreateSystemDefaultDevice()!
 let commandQueue = device.makeCommandQueue()!
 let library = try device.makeLibrary(filepath: "compute.metallib")
 
-guard let commandBuffer = commandQueue.makeCommandBuffer(),
-      let encoder = commandBuffer.makeComputeCommandEncoder() else { exit(-1) }
+let commandBuffer = commandQueue.makeCommandBuffer()!
+let encoder = commandBuffer.makeComputeCommandEncoder()!
 encoder.setComputePipelineState(try device.makeComputePipelineState(function: library.makeFunction(name: "add")!))
 
 let input: [Float] = [1.0, 2.0]
 encoder.setBuffer(device.makeBuffer(bytes: input as [Float], length: MemoryLayout<Float>.stride * 2, options: []),
-                  offset: 0, index: 1)
+                  offset: 0, index: 0)
 let outputBuffer = device.makeBuffer(length: MemoryLayout<Float>.stride, options: [])!
-encoder.setBuffer(outputBuffer, offset: 0, index: 2)
+encoder.setBuffer(outputBuffer, offset: 0, index: 1)
 
 let numThreadgroups = MTLSize(width: 1, height: 1, depth: 1)
 let threadsPerThreadgroup = MTLSize(width: 1, height: 1, depth: 1)

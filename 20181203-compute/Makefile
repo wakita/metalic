@@ -11,8 +11,5 @@ compute.metallib: Compute.metal
 compute: compute.swift
 	$(SDK) swiftc -o $@ $^
 
-run: compute.metallib compute.swift
-	swift compute.swift
-
 clean:
 	rm -f compute.metallib compute
