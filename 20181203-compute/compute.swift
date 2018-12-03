@@ -9,7 +9,7 @@ let encoder = commandBuffer.makeComputeCommandEncoder()!
 encoder.setComputePipelineState(try device.makeComputePipelineState(function: library.makeFunction(name: "add")!))
 
 let input: [Float] = [1.0, 2.0]
-encoder.setBuffer(device.makeBuffer(bytes: input as [Float], length: MemoryLayout<Float>.stride * 2, options: []),
+encoder.setBuffer(device.makeBuffer(bytes: input as [Float], length: MemoryLayout<Float>.stride * input.count, options: []),
                   offset: 0, index: 0)
 let outputBuffer = device.makeBuffer(length: MemoryLayout<Float>.stride, options: [])!
 encoder.setBuffer(outputBuffer, offset: 0, index: 1)
