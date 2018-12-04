@@ -67,10 +67,10 @@ class Renderer: NSObject {
         vertexBuffer = device.makeBuffer(bytes: [0.0], length: 1, options: [])
     }
     
-    let eyes = [float4(0.49, 1.1, 3, 1), float4(0.51, 1.1, 3, 1)]
+    let eyes = [float4(0.497, 1.1, 0.5, 1), float4(0.503, 1.1, 0.5, 1)]
     var U = Uniforms()
     func createUniforms() {
-        U.N = 5 + 1
+        U.N = 50 + 1
         U.Model = float4x4.identity()
         U.View  = float4x4.identity()
     }
@@ -82,8 +82,9 @@ extension Renderer: MTKViewDelegate {
         U.Projection = float4x4(projectionFov: radians(fromDegrees: 70),
                                 near: 0.001, far: 100,
                                 aspect: aspect);
-        U.DrawableWidth  = Int32(view.drawableSize.width)
-        U.DrawableHeight = Int32(view.drawableSize.height)
+        U.DrawableWidth  = Int32(max(view.drawableSize.width, view.drawableSize.height))
+        U.DrawableHeight = Int32(min(view.drawableSize.width, view.drawableSize.height))
+        print(view.drawableSize)
     }
     
     func draw(in view: MTKView) {
@@ -97,7 +98,7 @@ extension Renderer: MTKViewDelegate {
             U.Left = Int32(1 - i)
             let eye = float4x4(rotationY: Float(3.14 * (-t / 20))) * eyes[i]
             U.PostProjection = float4x4(translation: [i == 0 ? -0.5 : 0.5, 0, 0])
-            U.View = float4x4(eye: [eye.x, eye.y, eye.z], center: [0.5, 0.6, 0.7], up: [0, 1, 0])
+            U.View = float4x4(eye: [eye.x, eye.y, eye.z], center: [0.45, 0.45, 0.45], up: [0, 1, 0])
             
             commandEncoder.setRenderPipelineState(renderPipelineState)
             commandEncoder.setDepthStencilState(depthStencilState)
