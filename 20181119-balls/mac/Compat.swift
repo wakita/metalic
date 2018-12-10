@@ -8,4 +8,9 @@
 
 import AppKit
 
-class _ViewController: NSViewController {}
+class _ViewController: NSViewController {
+    
+    func isLandscape() -> Bool {
+        return false
+    }
+}

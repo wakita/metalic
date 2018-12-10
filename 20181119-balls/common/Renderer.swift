@@ -11,8 +11,10 @@ import MetalKit
 class Renderer: NSObject {
     
     let start = Date()
+    var viewController: _ViewController
     
-    init(device: MTLDevice) {
+    init(device: MTLDevice, viewController: _ViewController) {
+        self.viewController = viewController
         super.init()
         createCommandQueue(device: device)
         createPipelineState(device: device)
@@ -67,10 +69,10 @@ class Renderer: NSObject {
         vertexBuffer = device.makeBuffer(bytes: [0.0], length: 1, options: [])
     }
     
-    let eyes = [float4(0.497, 1.1, 0.5, 1), float4(0.503, 1.1, 0.5, 1)]
+    let eyes = [float4(0.499, 1.1, 0.5, 1), float4(0.501, 1.1, 0.5, 1)]
     var U = Uniforms()
     func createUniforms() {
-        U.N = 50 + 1
+        U.N = 99 + 1
         U.Model = float4x4.identity()
         U.View  = float4x4.identity()
     }
@@ -82,9 +84,24 @@ extension Renderer: MTKViewDelegate {
         U.Projection = float4x4(projectionFov: radians(fromDegrees: 70),
                                 near: 0.001, far: 100,
                                 aspect: aspect);
-        U.DrawableWidth  = Int32(max(view.drawableSize.width, view.drawableSize.height))
-        U.DrawableHeight = Int32(min(view.drawableSize.width, view.drawableSize.height))
-        print(view.drawableSize)
+        // 3D TV 向けの出力をするときは aspect /= 2 するとよさそうだ。
+        let sz = view.drawableSize
+        /*
+        if (viewController.isLandscape()) {
+            U.DrawableWidth  = Int32(sz.height)
+            U.DrawableHeight = Int32(sz.width)
+        } else {
+            U.DrawableWidth  = Int32(sz.width)
+            U.DrawableHeight = Int32(sz.height)
+        }
+         */
+        #if os(iOS) || os(watchOS) || os(tvOS)
+        U.DrawableWidth  = Int32(sz.height)
+        U.DrawableHeight = Int32(sz.width)
+        #else
+        U.DrawableWidth  = Int32(sz.width)
+        U.DrawableHeight = Int32(sz.height)
+        #endif
     }
     
     func draw(in view: MTKView) {

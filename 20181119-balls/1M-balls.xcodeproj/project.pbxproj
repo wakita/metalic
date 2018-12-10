@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B1144C421A2E31600190C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144C321A2E31600190C29 /* AppDelegate.swift */; };
-		0B1144C621A2E31600190C29 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144C521A2E31600190C29 /* MetalView.swift */; };
+		0B1144C621A2E31600190C29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144C521A2E31600190C29 /* ViewController.swift */; };
 		0B1144C821A2E31800190C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1144C721A2E31800190C29 /* Assets.xcassets */; };
 		0B1144CB21A2E31800190C29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1144C921A2E31800190C29 /* Main.storyboard */; };
 		0B1144D721A2E31800190C29 /* _0181119_ballsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144D621A2E31800190C29 /* _0181119_ballsTests.swift */; };
@@ -18,13 +18,13 @@
 		0BA85B9321AEE89300B3C917 /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B98A31521AA486300042D77 /* MathLibrary.swift */; };
 		0BA85B9421AEE89600B3C917 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144E321A2EC9A00190C29 /* Shaders.metal */; };
 		0BA85B9521AEE89900B3C917 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144E121A2E3C900190C29 /* Renderer.swift */; };
-		0BA85B9621AEE89D00B3C917 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144C521A2E31600190C29 /* MetalView.swift */; };
+		0BA85B9621AEE89D00B3C917 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1144C521A2E31600190C29 /* ViewController.swift */; };
 		0BC1CE6B21AE25EA00C21032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1CE6A21AE25EA00C21032 /* AppDelegate.swift */; };
-		0BC1CE6D21AE25EA00C21032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1CE6C21AE25EA00C21032 /* ViewController.swift */; };
+		0BC1CE6D21AE25EA00C21032 /* Compat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1CE6C21AE25EA00C21032 /* Compat.swift */; };
 		0BC1CE7021AE25EA00C21032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1CE6E21AE25EA00C21032 /* Main.storyboard */; };
 		0BC1CE7221AE25EB00C21032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1CE7121AE25EB00C21032 /* Assets.xcassets */; };
 		0BC1CE7521AE25EB00C21032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1CE7321AE25EB00C21032 /* LaunchScreen.storyboard */; };
-		0BF07BDB21AEDAF100B603FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF07BDA21AEDAF100B603FD /* ViewController.swift */; };
+		0BF07BDB21AEDAF100B603FD /* Compat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF07BDA21AEDAF100B603FD /* Compat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		0B1144C021A2E31600190C29 /* 1M-balls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1M-balls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1144C321A2E31600190C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B1144C521A2E31600190C29 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		0B1144C521A2E31600190C29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0B1144C721A2E31800190C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B1144CA21A2E31800190C29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B1144CC21A2E31800190C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,12 +54,12 @@
 		0B98A31521AA486300042D77 /* MathLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathLibrary.swift; sourceTree = "<group>"; };
 		0BC1CE6821AE25EA00C21032 /* 1M-balls-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1M-balls-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC1CE6A21AE25EA00C21032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0BC1CE6C21AE25EA00C21032 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0BC1CE6C21AE25EA00C21032 /* Compat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compat.swift; sourceTree = "<group>"; };
 		0BC1CE6F21AE25EA00C21032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BC1CE7121AE25EB00C21032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BC1CE7421AE25EB00C21032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BC1CE7621AE25EB00C21032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BF07BDA21AEDAF100B603FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0BF07BDA21AEDAF100B603FD /* Compat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 		0B1144C221A2E31600190C29 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				0B1144C521A2E31600190C29 /* MetalView.swift */,
+				0B1144C521A2E31600190C29 /* ViewController.swift */,
 				0B1144E121A2E3C900190C29 /* Renderer.swift */,
 				0B1144E321A2EC9A00190C29 /* Shaders.metal */,
 				0B98A31521AA486300042D77 /* MathLibrary.swift */,
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				0BC1CE6A21AE25EA00C21032 /* AppDelegate.swift */,
-				0BC1CE6C21AE25EA00C21032 /* ViewController.swift */,
+				0BC1CE6C21AE25EA00C21032 /* Compat.swift */,
 				0BC1CE6E21AE25EA00C21032 /* Main.storyboard */,
 				0BC1CE7121AE25EB00C21032 /* Assets.xcassets */,
 				0BC1CE7321AE25EB00C21032 /* LaunchScreen.storyboard */,
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				0B1144C321A2E31600190C29 /* AppDelegate.swift */,
-				0BF07BDA21AEDAF100B603FD /* ViewController.swift */,
+				0BF07BDA21AEDAF100B603FD /* Compat.swift */,
 				0B1144C921A2E31800190C29 /* Main.storyboard */,
 				0B1144C721A2E31800190C29 /* Assets.xcassets */,
 				0B1144CC21A2E31800190C29 /* Info.plist */,
@@ -287,11 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B1144E421A2EC9A00190C29 /* Shaders.metal in Sources */,
-				0B1144C621A2E31600190C29 /* MetalView.swift in Sources */,
+				0B1144C621A2E31600190C29 /* ViewController.swift in Sources */,
 				0B1144E221A2E3C900190C29 /* Renderer.swift in Sources */,
 				0B1144C421A2E31600190C29 /* AppDelegate.swift in Sources */,
 				0B98A31621AA486300042D77 /* MathLibrary.swift in Sources */,
-				0BF07BDB21AEDAF100B603FD /* ViewController.swift in Sources */,
+				0BF07BDB21AEDAF100B603FD /* Compat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BA85B9621AEE89D00B3C917 /* MetalView.swift in Sources */,
+				0BA85B9621AEE89D00B3C917 /* ViewController.swift in Sources */,
 				0BA85B9421AEE89600B3C917 /* Shaders.metal in Sources */,
-				0BC1CE6D21AE25EA00C21032 /* ViewController.swift in Sources */,
+				0BC1CE6D21AE25EA00C21032 /* Compat.swift in Sources */,
 				0BC1CE6B21AE25EA00C21032 /* AppDelegate.swift in Sources */,
 				0BA85B9521AEE89900B3C917 /* Renderer.swift in Sources */,
 				0BA85B9321AEE89300B3C917 /* MathLibrary.swift in Sources */,

@@ -25,7 +25,7 @@ class ViewController: _ViewController {
         metalView.depthStencilPixelFormat = .depth32Float
         metalView.clearColor = MTLClearColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
         
-        renderer = Renderer(device: defaultDevice)
+        renderer = Renderer(device: defaultDevice, viewController: self)
         metalView.delegate = renderer
         renderer?.mtkView(metalView, drawableSizeWillChange: view.frame.size)
     }
