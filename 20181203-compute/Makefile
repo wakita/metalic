@@ -1,15 +1,22 @@
-SDK = xcrun -sdk macosx
+LIB = compute.metallib pi.metallib
+TARGET = compute pi
+XC = xcrun -sdk macosx
 
-all: compute.metallib compute
+all: $(LIB) $(TARGET)
 
-compute.metallib: Compute.metal
+%.metallib: %.metal
 	# Metal intermediate representation (.air)
-	$(SDK) metal -c -Wall -Wextra -std=osx-metal2.0 -o /tmp/Compute.air $^
+	$(XC) metal -c -Wall -Wextra -std=osx-metal2.0 -o /tmp/$<.air $^
 	# Metal library (.metallib)
-	$(SDK) metallib -o $@ /tmp/Compute.air
+	$(XC) metallib -o $@ /tmp/$<.air
 
-compute: compute.swift
-	$(SDK) swiftc -o $@ $^
+pi.metallib: Loki/Loki/*.metal pi.metal
+	$(XC) metal -c -Wall -Wextra -std=osx-metal2.0 -o /tmp/loki.air Loki/Loki/loki.metal
+	$(XC) metal -c -Wall -Wextra -std=osx-metal2.0 -o /tmp/pi.air pi.metal
+	$(XC) metallib -o $@ /tmp/loki.air /tmp/pi.air
+
+%: %.swift
+	$(XC) swiftc -o $@ $<
 
 clean:
-	rm -f compute.metallib compute
+	rm -f *.metallib $(TARGET)

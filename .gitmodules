@@ -4,3 +4,6 @@
 [submodule "20181115-Mandelbrot"]
 	path = 20181115-Mandelbrot
 	url = /Users/wakita/Dropbox/projects/metalic/20181115-Mandelbrot
+[submodule "20181203-compute/Loki"]
+	path = 20181203-compute/Loki
+	url = git@github.com:YoussefV/Loki.git
