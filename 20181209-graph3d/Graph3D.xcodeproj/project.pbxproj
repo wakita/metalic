@@ -1,0 +1,796 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B51C48421BD45DA009B7968 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B51C47F21BD45DA009B7968 /* ViewController.swift */; };
+		0B51C48521BD45DA009B7968 /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B51C48021BD45DA009B7968 /* MathLibrary.swift */; };
+		0B51C48621BD45DA009B7968 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B51C48221BD45DA009B7968 /* Renderer.swift */; };
+		0B51C48721BD45DA009B7968 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0B51C48321BD45DA009B7968 /* Shaders.metal */; };
+		0B51C48821BD631D009B7968 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B51C47F21BD45DA009B7968 /* ViewController.swift */; };
+		0B51C48921BD6321009B7968 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B51C48221BD45DA009B7968 /* Renderer.swift */; };
+		0B51C48A21BD6324009B7968 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0B51C48321BD45DA009B7968 /* Shaders.metal */; };
+		0B51C48B21BD6327009B7968 /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B51C48021BD45DA009B7968 /* MathLibrary.swift */; };
+		0B51C48C21BD63C0009B7968 /* er-200-0.15-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911921BD0BB700BB0461 /* er-200-0.15-hde30.npy */; };
+		0B51C48D21BD63C0009B7968 /* er-200-0.15-smacof.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911A21BD0BB700BB0461 /* er-200-0.15-smacof.npy */; };
+		0B51C48E21BD63C0009B7968 /* er-200-0.15-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911B21BD0BB700BB0461 /* er-200-0.15-agi0.npy */; };
+		0B51C48F21BD63C0009B7968 /* ws-200-5-0.15-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911C21BD0BB700BB0461 /* ws-200-5-0.15-agi0.npy */; };
+		0B51C49021BD63C0009B7968 /* torus-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911D21BD0BB700BB0461 /* torus-cmds.npy */; };
+		0B51C49121BD63C0009B7968 /* planted-sw-3-66-0.15-0.03-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911E21BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-cmds.npy */; };
+		0B51C49221BD63C0009B7968 /* ba-200-4-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911F21BD0BB700BB0461 /* ba-200-4-agi0.npy */; };
+		0B51C49321BD63C0009B7968 /* torus-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912021BD0BB700BB0461 /* torus-hde30.npy */; };
+		0B51C49421BD63C0009B7968 /* ba-200-4-smacof.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912121BD0BB700BB0461 /* ba-200-4-smacof.npy */; };
+		0B51C49521BD63C0009B7968 /* ba-200-4-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912221BD0BB700BB0461 /* ba-200-4-hde30.npy */; };
+		0B51C49621BD63C0009B7968 /* math-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912321BD0BB700BB0461 /* math-agi0.npy */; };
+		0B51C49721BD63C0009B7968 /* ba-200-4-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912421BD0BB700BB0461 /* ba-200-4-cmds.npy */; };
+		0B51C49821BD63C0009B7968 /* planted-sw-3-66-0.15-0.03-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912521BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-agi0.npy */; };
+		0B51C49921BD63C0009B7968 /* torus-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912621BD0BB700BB0461 /* torus-agi0.npy */; };
+		0B51C49A21BD63C0009B7968 /* math-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912721BD0BB700BB0461 /* math-cmds.npy */; };
+		0B51C49B21BD63C0009B7968 /* math-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912821BD0BB700BB0461 /* math-hde30.npy */; };
+		0B51C49C21BD63C0009B7968 /* planted-sw-3-66-0.15-0.03-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912921BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-hde30.npy */; };
+		0B51C49D21BD63C0009B7968 /* ws-200-5-0.15-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912A21BD0BB700BB0461 /* ws-200-5-0.15-cmds.npy */; };
+		0B51C49E21BD63C0009B7968 /* ws-200-5-0.15-smacof.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912B21BD0BB700BB0461 /* ws-200-5-0.15-smacof.npy */; };
+		0B51C49F21BD63C0009B7968 /* er-200-0.15-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912C21BD0BB700BB0461 /* er-200-0.15-cmds.npy */; };
+		0B51C4A021BD63C0009B7968 /* ws-200-5-0.15-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912D21BD0BB700BB0461 /* ws-200-5-0.15-hde30.npy */; };
+		0B71D02E21BD067C00F55F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71D02D21BD067C00F55F1C /* AppDelegate.swift */; };
+		0B71D03021BD067C00F55F1C /* Compat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71D02F21BD067C00F55F1C /* Compat.swift */; };
+		0B71D03221BD067D00F55F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B71D03121BD067D00F55F1C /* Assets.xcassets */; };
+		0B71D03521BD067D00F55F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B71D03321BD067D00F55F1C /* Main.storyboard */; };
+		0B71D04221BD06C900F55F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71D04121BD06C900F55F1C /* AppDelegate.swift */; };
+		0B71D04421BD06C900F55F1C /* Compat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71D04321BD06C900F55F1C /* Compat.swift */; };
+		0B71D04721BD06C900F55F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B71D04521BD06C900F55F1C /* Main.storyboard */; };
+		0B71D04921BD06C900F55F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B71D04821BD06C900F55F1C /* Assets.xcassets */; };
+		0B71D04C21BD06C900F55F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B71D04A21BD06C900F55F1C /* LaunchScreen.storyboard */; };
+		0BFC915B21BD0C9D00BB0461 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914221BD0C9C00BB0461 /* DataType.swift */; };
+		0BFC915C21BD0C9D00BB0461 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914221BD0C9C00BB0461 /* DataType.swift */; };
+		0BFC915D21BD0C9D00BB0461 /* NpySaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914321BD0C9C00BB0461 /* NpySaver.swift */; };
+		0BFC915E21BD0C9D00BB0461 /* NpySaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914321BD0C9C00BB0461 /* NpySaver.swift */; };
+		0BFC915F21BD0C9D00BB0461 /* NpyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914421BD0C9C00BB0461 /* NpyLoader.swift */; };
+		0BFC916021BD0C9D00BB0461 /* NpyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914421BD0C9C00BB0461 /* NpyLoader.swift */; };
+		0BFC916121BD0C9D00BB0461 /* NpyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914521BD0C9C00BB0461 /* NpyHeader.swift */; };
+		0BFC916221BD0C9D00BB0461 /* NpyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914521BD0C9C00BB0461 /* NpyHeader.swift */; };
+		0BFC916721BD0C9D00BB0461 /* Npy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914821BD0C9C00BB0461 /* Npy.swift */; };
+		0BFC916821BD0C9D00BB0461 /* Npy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC914821BD0C9C00BB0461 /* Npy.swift */; };
+		0BFC937121BD1B5500BB0461 /* er-200-0.15-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911921BD0BB700BB0461 /* er-200-0.15-hde30.npy */; };
+		0BFC937221BD1B5500BB0461 /* er-200-0.15-smacof.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911A21BD0BB700BB0461 /* er-200-0.15-smacof.npy */; };
+		0BFC937321BD1B5500BB0461 /* er-200-0.15-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911B21BD0BB700BB0461 /* er-200-0.15-agi0.npy */; };
+		0BFC937421BD1B5500BB0461 /* ws-200-5-0.15-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911C21BD0BB700BB0461 /* ws-200-5-0.15-agi0.npy */; };
+		0BFC937521BD1B5500BB0461 /* torus-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911D21BD0BB700BB0461 /* torus-cmds.npy */; };
+		0BFC937621BD1B5500BB0461 /* planted-sw-3-66-0.15-0.03-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911E21BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-cmds.npy */; };
+		0BFC937721BD1B5500BB0461 /* ba-200-4-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC911F21BD0BB700BB0461 /* ba-200-4-agi0.npy */; };
+		0BFC937821BD1B5500BB0461 /* torus-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912021BD0BB700BB0461 /* torus-hde30.npy */; };
+		0BFC937921BD1B5500BB0461 /* ba-200-4-smacof.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912121BD0BB700BB0461 /* ba-200-4-smacof.npy */; };
+		0BFC937A21BD1B5500BB0461 /* ba-200-4-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912221BD0BB700BB0461 /* ba-200-4-hde30.npy */; };
+		0BFC937B21BD1B5500BB0461 /* math-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912321BD0BB700BB0461 /* math-agi0.npy */; };
+		0BFC937C21BD1B5500BB0461 /* ba-200-4-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912421BD0BB700BB0461 /* ba-200-4-cmds.npy */; };
+		0BFC937D21BD1B5500BB0461 /* planted-sw-3-66-0.15-0.03-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912521BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-agi0.npy */; };
+		0BFC937E21BD1B5500BB0461 /* torus-agi0.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912621BD0BB700BB0461 /* torus-agi0.npy */; };
+		0BFC937F21BD1B5500BB0461 /* math-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912721BD0BB700BB0461 /* math-cmds.npy */; };
+		0BFC938021BD1B5500BB0461 /* math-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912821BD0BB700BB0461 /* math-hde30.npy */; };
+		0BFC938121BD1B5500BB0461 /* planted-sw-3-66-0.15-0.03-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912921BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-hde30.npy */; };
+		0BFC938221BD1B5500BB0461 /* ws-200-5-0.15-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912A21BD0BB700BB0461 /* ws-200-5-0.15-cmds.npy */; };
+		0BFC938321BD1B5500BB0461 /* ws-200-5-0.15-smacof.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912B21BD0BB700BB0461 /* ws-200-5-0.15-smacof.npy */; };
+		0BFC938421BD1B5500BB0461 /* er-200-0.15-cmds.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912C21BD0BB700BB0461 /* er-200-0.15-cmds.npy */; };
+		0BFC938521BD1B5500BB0461 /* ws-200-5-0.15-hde30.npy in Resources */ = {isa = PBXBuildFile; fileRef = 0BFC912D21BD0BB700BB0461 /* ws-200-5-0.15-hde30.npy */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B51C47F21BD45DA009B7968 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B51C48021BD45DA009B7968 /* MathLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathLibrary.swift; sourceTree = "<group>"; };
+		0B51C48121BD45DA009B7968 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		0B51C48221BD45DA009B7968 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		0B51C48321BD45DA009B7968 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		0B71D02A21BD067C00F55F1C /* Graph3D-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graph3D-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B71D02D21BD067C00F55F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0B71D02F21BD067C00F55F1C /* Compat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compat.swift; sourceTree = "<group>"; };
+		0B71D03121BD067D00F55F1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0B71D03421BD067D00F55F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0B71D03621BD067D00F55F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B71D03721BD067D00F55F1C /* Graph3D_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Graph3D_mac.entitlements; sourceTree = "<group>"; };
+		0B71D03F21BD06C900F55F1C /* Graph3D-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graph3D-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B71D04121BD06C900F55F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0B71D04321BD06C900F55F1C /* Compat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compat.swift; sourceTree = "<group>"; };
+		0B71D04621BD06C900F55F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0B71D04821BD06C900F55F1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0B71D04B21BD06C900F55F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0B71D04D21BD06C900F55F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BFC911921BD0BB700BB0461 /* er-200-0.15-hde30.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "er-200-0.15-hde30.npy"; sourceTree = "<group>"; };
+		0BFC911A21BD0BB700BB0461 /* er-200-0.15-smacof.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "er-200-0.15-smacof.npy"; sourceTree = "<group>"; };
+		0BFC911B21BD0BB700BB0461 /* er-200-0.15-agi0.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "er-200-0.15-agi0.npy"; sourceTree = "<group>"; };
+		0BFC911C21BD0BB700BB0461 /* ws-200-5-0.15-agi0.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ws-200-5-0.15-agi0.npy"; sourceTree = "<group>"; };
+		0BFC911D21BD0BB700BB0461 /* torus-cmds.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "torus-cmds.npy"; sourceTree = "<group>"; };
+		0BFC911E21BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-cmds.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "planted-sw-3-66-0.15-0.03-cmds.npy"; sourceTree = "<group>"; };
+		0BFC911F21BD0BB700BB0461 /* ba-200-4-agi0.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ba-200-4-agi0.npy"; sourceTree = "<group>"; };
+		0BFC912021BD0BB700BB0461 /* torus-hde30.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "torus-hde30.npy"; sourceTree = "<group>"; };
+		0BFC912121BD0BB700BB0461 /* ba-200-4-smacof.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ba-200-4-smacof.npy"; sourceTree = "<group>"; };
+		0BFC912221BD0BB700BB0461 /* ba-200-4-hde30.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ba-200-4-hde30.npy"; sourceTree = "<group>"; };
+		0BFC912321BD0BB700BB0461 /* math-agi0.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "math-agi0.npy"; sourceTree = "<group>"; };
+		0BFC912421BD0BB700BB0461 /* ba-200-4-cmds.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ba-200-4-cmds.npy"; sourceTree = "<group>"; };
+		0BFC912521BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-agi0.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "planted-sw-3-66-0.15-0.03-agi0.npy"; sourceTree = "<group>"; };
+		0BFC912621BD0BB700BB0461 /* torus-agi0.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "torus-agi0.npy"; sourceTree = "<group>"; };
+		0BFC912721BD0BB700BB0461 /* math-cmds.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "math-cmds.npy"; sourceTree = "<group>"; };
+		0BFC912821BD0BB700BB0461 /* math-hde30.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "math-hde30.npy"; sourceTree = "<group>"; };
+		0BFC912921BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-hde30.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "planted-sw-3-66-0.15-0.03-hde30.npy"; sourceTree = "<group>"; };
+		0BFC912A21BD0BB700BB0461 /* ws-200-5-0.15-cmds.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ws-200-5-0.15-cmds.npy"; sourceTree = "<group>"; };
+		0BFC912B21BD0BB700BB0461 /* ws-200-5-0.15-smacof.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ws-200-5-0.15-smacof.npy"; sourceTree = "<group>"; };
+		0BFC912C21BD0BB700BB0461 /* er-200-0.15-cmds.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "er-200-0.15-cmds.npy"; sourceTree = "<group>"; };
+		0BFC912D21BD0BB700BB0461 /* ws-200-5-0.15-hde30.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ws-200-5-0.15-hde30.npy"; sourceTree = "<group>"; };
+		0BFC914221BD0C9C00BB0461 /* DataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		0BFC914321BD0C9C00BB0461 /* NpySaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NpySaver.swift; sourceTree = "<group>"; };
+		0BFC914421BD0C9C00BB0461 /* NpyLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NpyLoader.swift; sourceTree = "<group>"; };
+		0BFC914521BD0C9C00BB0461 /* NpyHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NpyHeader.swift; sourceTree = "<group>"; };
+		0BFC914821BD0C9C00BB0461 /* Npy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Npy.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B71D02721BD067C00F55F1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B71D03C21BD06C900F55F1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B71D01F21BD05DD00F55F1C = {
+			isa = PBXGroup;
+			children = (
+				0BFC90E821BD08A100BB0461 /* Common */,
+				0B71D02C21BD067C00F55F1C /* Graph3D-mac */,
+				0B71D04021BD06C900F55F1C /* Graph3D-ios */,
+				0BFC912F21BD0C9C00BB0461 /* others */,
+				0BFC912E21BD0BC900BB0461 /* Resources */,
+				0B71D02B21BD067C00F55F1C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0B71D02B21BD067C00F55F1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B71D02A21BD067C00F55F1C /* Graph3D-mac.app */,
+				0B71D03F21BD06C900F55F1C /* Graph3D-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0B71D02C21BD067C00F55F1C /* Graph3D-mac */ = {
+			isa = PBXGroup;
+			children = (
+				0B71D02D21BD067C00F55F1C /* AppDelegate.swift */,
+				0B71D02F21BD067C00F55F1C /* Compat.swift */,
+				0B71D03121BD067D00F55F1C /* Assets.xcassets */,
+				0B71D03321BD067D00F55F1C /* Main.storyboard */,
+				0B71D03621BD067D00F55F1C /* Info.plist */,
+				0B71D03721BD067D00F55F1C /* Graph3D_mac.entitlements */,
+			);
+			path = "Graph3D-mac";
+			sourceTree = "<group>";
+		};
+		0B71D04021BD06C900F55F1C /* Graph3D-ios */ = {
+			isa = PBXGroup;
+			children = (
+				0B71D04121BD06C900F55F1C /* AppDelegate.swift */,
+				0B71D04321BD06C900F55F1C /* Compat.swift */,
+				0B71D04521BD06C900F55F1C /* Main.storyboard */,
+				0B71D04821BD06C900F55F1C /* Assets.xcassets */,
+				0B71D04A21BD06C900F55F1C /* LaunchScreen.storyboard */,
+				0B71D04D21BD06C900F55F1C /* Info.plist */,
+			);
+			path = "Graph3D-ios";
+			sourceTree = "<group>";
+		};
+		0BFC90E821BD08A100BB0461 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0B51C47F21BD45DA009B7968 /* ViewController.swift */,
+				0B51C48221BD45DA009B7968 /* Renderer.swift */,
+				0B51C48321BD45DA009B7968 /* Shaders.metal */,
+				0B51C48021BD45DA009B7968 /* MathLibrary.swift */,
+				0B51C48121BD45DA009B7968 /* Bridge.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0BFC911821BD0BB700BB0461 /* layout-3d */ = {
+			isa = PBXGroup;
+			children = (
+				0BFC911921BD0BB700BB0461 /* er-200-0.15-hde30.npy */,
+				0BFC911A21BD0BB700BB0461 /* er-200-0.15-smacof.npy */,
+				0BFC911B21BD0BB700BB0461 /* er-200-0.15-agi0.npy */,
+				0BFC911C21BD0BB700BB0461 /* ws-200-5-0.15-agi0.npy */,
+				0BFC911D21BD0BB700BB0461 /* torus-cmds.npy */,
+				0BFC911E21BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-cmds.npy */,
+				0BFC911F21BD0BB700BB0461 /* ba-200-4-agi0.npy */,
+				0BFC912021BD0BB700BB0461 /* torus-hde30.npy */,
+				0BFC912121BD0BB700BB0461 /* ba-200-4-smacof.npy */,
+				0BFC912221BD0BB700BB0461 /* ba-200-4-hde30.npy */,
+				0BFC912321BD0BB700BB0461 /* math-agi0.npy */,
+				0BFC912421BD0BB700BB0461 /* ba-200-4-cmds.npy */,
+				0BFC912521BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-agi0.npy */,
+				0BFC912621BD0BB700BB0461 /* torus-agi0.npy */,
+				0BFC912721BD0BB700BB0461 /* math-cmds.npy */,
+				0BFC912821BD0BB700BB0461 /* math-hde30.npy */,
+				0BFC912921BD0BB700BB0461 /* planted-sw-3-66-0.15-0.03-hde30.npy */,
+				0BFC912A21BD0BB700BB0461 /* ws-200-5-0.15-cmds.npy */,
+				0BFC912B21BD0BB700BB0461 /* ws-200-5-0.15-smacof.npy */,
+				0BFC912C21BD0BB700BB0461 /* er-200-0.15-cmds.npy */,
+				0BFC912D21BD0BB700BB0461 /* ws-200-5-0.15-hde30.npy */,
+			);
+			path = "layout-3d";
+			sourceTree = "<group>";
+		};
+		0BFC912E21BD0BC900BB0461 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0BFC911821BD0BB700BB0461 /* layout-3d */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0BFC912F21BD0C9C00BB0461 /* others */ = {
+			isa = PBXGroup;
+			children = (
+				0BFC914021BD0C9C00BB0461 /* Npy */,
+			);
+			path = others;
+			sourceTree = "<group>";
+		};
+		0BFC914021BD0C9C00BB0461 /* Npy */ = {
+			isa = PBXGroup;
+			children = (
+				0BFC914221BD0C9C00BB0461 /* DataType.swift */,
+				0BFC914321BD0C9C00BB0461 /* NpySaver.swift */,
+				0BFC914421BD0C9C00BB0461 /* NpyLoader.swift */,
+				0BFC914521BD0C9C00BB0461 /* NpyHeader.swift */,
+				0BFC914821BD0C9C00BB0461 /* Npy.swift */,
+			);
+			path = Npy;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0B71D02921BD067C00F55F1C /* Graph3D-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B71D03A21BD067D00F55F1C /* Build configuration list for PBXNativeTarget "Graph3D-mac" */;
+			buildPhases = (
+				0B71D02621BD067C00F55F1C /* Sources */,
+				0B71D02721BD067C00F55F1C /* Frameworks */,
+				0B71D02821BD067C00F55F1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Graph3D-mac";
+			productName = "Graph3D-mac";
+			productReference = 0B71D02A21BD067C00F55F1C /* Graph3D-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0B71D03E21BD06C900F55F1C /* Graph3D-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B71D04E21BD06C900F55F1C /* Build configuration list for PBXNativeTarget "Graph3D-ios" */;
+			buildPhases = (
+				0B71D03B21BD06C900F55F1C /* Sources */,
+				0B71D03C21BD06C900F55F1C /* Frameworks */,
+				0B71D03D21BD06C900F55F1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Graph3D-ios";
+			productName = "Graph3D-ios";
+			productReference = 0B71D03F21BD06C900F55F1C /* Graph3D-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B71D02021BD05DD00F55F1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					0B71D02921BD067C00F55F1C = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					0B71D03E21BD06C900F55F1C = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 0B71D02321BD05DD00F55F1C /* Build configuration list for PBXProject "Graph3D" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0B71D01F21BD05DD00F55F1C;
+			productRefGroup = 0B71D02B21BD067C00F55F1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0B71D02921BD067C00F55F1C /* Graph3D-mac */,
+				0B71D03E21BD06C900F55F1C /* Graph3D-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0B71D02821BD067C00F55F1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFC937121BD1B5500BB0461 /* er-200-0.15-hde30.npy in Resources */,
+				0BFC937221BD1B5500BB0461 /* er-200-0.15-smacof.npy in Resources */,
+				0BFC937321BD1B5500BB0461 /* er-200-0.15-agi0.npy in Resources */,
+				0BFC937421BD1B5500BB0461 /* ws-200-5-0.15-agi0.npy in Resources */,
+				0BFC937521BD1B5500BB0461 /* torus-cmds.npy in Resources */,
+				0BFC937621BD1B5500BB0461 /* planted-sw-3-66-0.15-0.03-cmds.npy in Resources */,
+				0BFC937721BD1B5500BB0461 /* ba-200-4-agi0.npy in Resources */,
+				0BFC937821BD1B5500BB0461 /* torus-hde30.npy in Resources */,
+				0BFC937921BD1B5500BB0461 /* ba-200-4-smacof.npy in Resources */,
+				0BFC937A21BD1B5500BB0461 /* ba-200-4-hde30.npy in Resources */,
+				0BFC937B21BD1B5500BB0461 /* math-agi0.npy in Resources */,
+				0BFC937C21BD1B5500BB0461 /* ba-200-4-cmds.npy in Resources */,
+				0BFC937D21BD1B5500BB0461 /* planted-sw-3-66-0.15-0.03-agi0.npy in Resources */,
+				0BFC937E21BD1B5500BB0461 /* torus-agi0.npy in Resources */,
+				0BFC937F21BD1B5500BB0461 /* math-cmds.npy in Resources */,
+				0BFC938021BD1B5500BB0461 /* math-hde30.npy in Resources */,
+				0BFC938121BD1B5500BB0461 /* planted-sw-3-66-0.15-0.03-hde30.npy in Resources */,
+				0BFC938221BD1B5500BB0461 /* ws-200-5-0.15-cmds.npy in Resources */,
+				0BFC938321BD1B5500BB0461 /* ws-200-5-0.15-smacof.npy in Resources */,
+				0BFC938421BD1B5500BB0461 /* er-200-0.15-cmds.npy in Resources */,
+				0BFC938521BD1B5500BB0461 /* ws-200-5-0.15-hde30.npy in Resources */,
+				0B71D03221BD067D00F55F1C /* Assets.xcassets in Resources */,
+				0B71D03521BD067D00F55F1C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B71D03D21BD06C900F55F1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B51C48C21BD63C0009B7968 /* er-200-0.15-hde30.npy in Resources */,
+				0B51C48D21BD63C0009B7968 /* er-200-0.15-smacof.npy in Resources */,
+				0B51C48E21BD63C0009B7968 /* er-200-0.15-agi0.npy in Resources */,
+				0B51C48F21BD63C0009B7968 /* ws-200-5-0.15-agi0.npy in Resources */,
+				0B51C49021BD63C0009B7968 /* torus-cmds.npy in Resources */,
+				0B51C49121BD63C0009B7968 /* planted-sw-3-66-0.15-0.03-cmds.npy in Resources */,
+				0B51C49221BD63C0009B7968 /* ba-200-4-agi0.npy in Resources */,
+				0B51C49321BD63C0009B7968 /* torus-hde30.npy in Resources */,
+				0B51C49421BD63C0009B7968 /* ba-200-4-smacof.npy in Resources */,
+				0B51C49521BD63C0009B7968 /* ba-200-4-hde30.npy in Resources */,
+				0B51C49621BD63C0009B7968 /* math-agi0.npy in Resources */,
+				0B51C49721BD63C0009B7968 /* ba-200-4-cmds.npy in Resources */,
+				0B51C49821BD63C0009B7968 /* planted-sw-3-66-0.15-0.03-agi0.npy in Resources */,
+				0B51C49921BD63C0009B7968 /* torus-agi0.npy in Resources */,
+				0B51C49A21BD63C0009B7968 /* math-cmds.npy in Resources */,
+				0B51C49B21BD63C0009B7968 /* math-hde30.npy in Resources */,
+				0B51C49C21BD63C0009B7968 /* planted-sw-3-66-0.15-0.03-hde30.npy in Resources */,
+				0B51C49D21BD63C0009B7968 /* ws-200-5-0.15-cmds.npy in Resources */,
+				0B51C49E21BD63C0009B7968 /* ws-200-5-0.15-smacof.npy in Resources */,
+				0B51C49F21BD63C0009B7968 /* er-200-0.15-cmds.npy in Resources */,
+				0B51C4A021BD63C0009B7968 /* ws-200-5-0.15-hde30.npy in Resources */,
+				0B71D04C21BD06C900F55F1C /* LaunchScreen.storyboard in Resources */,
+				0B71D04921BD06C900F55F1C /* Assets.xcassets in Resources */,
+				0B71D04721BD06C900F55F1C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B71D02621BD067C00F55F1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFC915F21BD0C9D00BB0461 /* NpyLoader.swift in Sources */,
+				0BFC915B21BD0C9D00BB0461 /* DataType.swift in Sources */,
+				0B51C48521BD45DA009B7968 /* MathLibrary.swift in Sources */,
+				0BFC916121BD0C9D00BB0461 /* NpyHeader.swift in Sources */,
+				0B71D03021BD067C00F55F1C /* Compat.swift in Sources */,
+				0BFC916721BD0C9D00BB0461 /* Npy.swift in Sources */,
+				0B71D02E21BD067C00F55F1C /* AppDelegate.swift in Sources */,
+				0B51C48421BD45DA009B7968 /* ViewController.swift in Sources */,
+				0B51C48721BD45DA009B7968 /* Shaders.metal in Sources */,
+				0B51C48621BD45DA009B7968 /* Renderer.swift in Sources */,
+				0BFC915D21BD0C9D00BB0461 /* NpySaver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B71D03B21BD06C900F55F1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFC916021BD0C9D00BB0461 /* NpyLoader.swift in Sources */,
+				0BFC915C21BD0C9D00BB0461 /* DataType.swift in Sources */,
+				0BFC916221BD0C9D00BB0461 /* NpyHeader.swift in Sources */,
+				0B71D04421BD06C900F55F1C /* Compat.swift in Sources */,
+				0B51C48A21BD6324009B7968 /* Shaders.metal in Sources */,
+				0BFC916821BD0C9D00BB0461 /* Npy.swift in Sources */,
+				0B51C48B21BD6327009B7968 /* MathLibrary.swift in Sources */,
+				0B71D04221BD06C900F55F1C /* AppDelegate.swift in Sources */,
+				0B51C48821BD631D009B7968 /* ViewController.swift in Sources */,
+				0B51C48921BD6321009B7968 /* Renderer.swift in Sources */,
+				0BFC915E21BD0C9D00BB0461 /* NpySaver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0B71D03321BD067D00F55F1C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B71D03421BD067D00F55F1C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0B71D04521BD06C900F55F1C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B71D04621BD06C900F55F1C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0B71D04A21BD06C900F55F1C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B71D04B21BD06C900F55F1C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0B71D02421BD05DD00F55F1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		0B71D02521BD05DD00F55F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		0B71D03821BD067D00F55F1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Graph3D-mac/Graph3D_mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TZ26RM2EZX;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Graph3D-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.smartnova.kwakita.Graph3D-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = Common/Bridge.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		0B71D03921BD067D00F55F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Graph3D-mac/Graph3D_mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TZ26RM2EZX;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Graph3D-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.smartnova.kwakita.Graph3D-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = Common/Bridge.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		0B71D04F21BD06C900F55F1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TZ26RM2EZX;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Graph3D-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.smartnova.kwakita.Graph3D-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = Common/Bridge.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0B71D05021BD06C900F55F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TZ26RM2EZX;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Graph3D-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.smartnova.kwakita.Graph3D-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = Common/Bridge.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B71D02321BD05DD00F55F1C /* Build configuration list for PBXProject "Graph3D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B71D02421BD05DD00F55F1C /* Debug */,
+				0B71D02521BD05DD00F55F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B71D03A21BD067D00F55F1C /* Build configuration list for PBXNativeTarget "Graph3D-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B71D03821BD067D00F55F1C /* Debug */,
+				0B71D03921BD067D00F55F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B71D04E21BD06C900F55F1C /* Build configuration list for PBXNativeTarget "Graph3D-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B71D04F21BD06C900F55F1C /* Debug */,
+				0B71D05021BD06C900F55F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B71D02021BD05DD00F55F1C /* Project object */;
+}
