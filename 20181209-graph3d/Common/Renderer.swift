@@ -87,7 +87,7 @@ class Renderer: NSObject {
 
     }
     
-    var eyes = [float4(0 - 0.001, 0, -15, 1), float4(0 + 0.001, 0, -15, 1)]
+    var eyes = [float4(0 - 0.001, 0, -10, 1), float4(0 + 0.001, 0, -10, 1)]
     var U = Uniforms()
     func createUniforms() {
         U.N = Int32(N)
@@ -126,19 +126,26 @@ extension Renderer: MTKViewDelegate {
             let renderPassDescriptr = view.currentRenderPassDescriptor,
             let commandBuffer = commandQueue.makeCommandBuffer(),
             let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptr) else { return }
+        //let eye0 = [10 * cos(t/36), 2 * sin(t/36)]
         for i in 0 ..< eyes.count {
             U.Left = Int32(1 - i)
             // let eye = float4x4(translation: [0, 0, Float(t / 10)]) * float4x4(rotationY: Float(3.14 * t / 36)) * eyes[i]
-            let eye = float4x4(translation: [0, 0, Float(t / 10)]) * eyes[i]
+            let eye = float4x4(translation: [0, 0, Float(t / 5)]) * eyes[i]
+            /*
+            let x = Float(eye0[0] + (i == 0 ? -0.001 : 0.001))
+            let eye = float4(x, Float(eye0[1]), 0, 0)
+             */
 
             U.PostProjection = float4x4(translation: [i == 0 ? -0.5 : 0.5, 0, 0])
             // U.View = float4x4(eye: [eye.x, eye.y, eye.z], center: [0, 0, 0], up: [0, 1, 0])
             U.View = float4x4(translation: [eye.x, eye.y, eye.z]).inverse
             
+            /*
             if (debug < 5) {
                 print(U.View)
                 debug = debug + 1
             }
+             */
 
             commandEncoder.setRenderPipelineState(renderPipelineState)
             commandEncoder.setDepthStencilState(depthStencilState)

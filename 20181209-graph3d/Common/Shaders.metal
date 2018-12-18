@@ -49,8 +49,8 @@ fragment FS_Out fs(FS_In  in [[ stage_in ]],
                    float2 xy [[point_coord]],
                    constant Uniforms &U [[ buffer(UNIFORMS_INDEX) ]]) {
     float x = in.position.x;
-    if (U.Left && x > U.DrawableWidth / 2 - 1 ||
-        !U.Left && x < U.DrawableWidth / 2 + 1) discard_fragment();
+    if ((U.Left && x > U.DrawableWidth / 2 - 1) ||
+        (!U.Left && x < U.DrawableWidth / 2 + 1)) discard_fragment();
 
     float  l = length(xy - float2(0.5));
     float3 c = float3(mix((0.5 - l) * 2, in.color, 0.7));
